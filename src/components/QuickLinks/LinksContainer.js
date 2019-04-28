@@ -6,7 +6,7 @@ const LinksContainer = () => {
       <div className="top-link first-link">
         <div className="quick-link-title">
           <span className="link-title-main">
-            REAL ESTATE <i class="fas fa-external-link-alt"></i>
+            REAL ESTATE <i className="fas fa-external-link-alt"></i>
           </span>
 
           <span className="link-title-sub">
@@ -19,7 +19,7 @@ const LinksContainer = () => {
       <div className="top-link second-link">
         <div className="quick-link-title">
           <span className="link-title-main">
-            FRANCHISE <i class="fas fa-external-link-alt"></i>
+            FRANCHISE <i className="fas fa-external-link-alt"></i>
           </span>
 
           <span className="link-title-sub">
@@ -32,7 +32,7 @@ const LinksContainer = () => {
       <div className="bottom-link third-link">
         <div className="quick-link-title">
           <span className="link-title-main">
-            JOIN US <i class="fas fa-external-link-alt"></i><br />
+            JOIN US <i className="fas fa-external-link-alt"></i><br />
             <span className="title-main-small">SEARCH AND APPLY FOR JOBS</span>
           </span>
 

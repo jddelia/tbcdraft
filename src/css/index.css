@@ -73,6 +73,7 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(10px, auto);
+  z-index: 1;
 }
 .navbar .nav-top {
   background: #175abd;
@@ -253,7 +254,7 @@ code {
   justify-self: center;
 }
 .brands .brand-options .option {
-  padding: 6% 4%;
+  padding: 4%;
   text-align: center;
   background: #ffffff;
   border: 2px solid transparent;
@@ -263,10 +264,17 @@ code {
   transition: all 0.2s;
 }
 .brands .brand-options .option:hover {
-  border: 2px solid #dddddd;
+  border: 1px solid #dddddd;
   border-radius: 2px;
-  box-shadow: 1px 1px 6px #dddddd;
+  box-shadow: 1px 1px 8px #dddddd;
   cursor: pointer;
+  color: #175abd;
+  transform: scale(1.1);
+}
+.brands .brand-options .selected {
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  box-shadow: 1px 1px 8px #dddddd;
   color: #175abd;
   transform: scale(1.1);
 }

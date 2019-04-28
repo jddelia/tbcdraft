@@ -1,47 +1,70 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const BrandsOptions = ({ handleBrandsFilter }) => {
+  const [selectedHistory, setSelectedHistory] = useState([]);
+  const firstOption = useRef();
+
+  useEffect(() => {
+    if (!selectedHistory[0]) {
+      (async () => await setSelectedHistory([firstOption.current]))();
+    }
+  }, [firstOption])
+
+  function handleClick(e) {
+    const filterText = e.target.textContent.split(" ")[0];
+    handleBrandsFilter(filterText);
+
+    if (selectedHistory[0]) {
+      selectedHistory[0].classList.remove("selected");
+    }
+    
+    e.target.classList.add("selected");
+
+    setSelectedHistory([e.target]);
+  }
+
   return (
     <div className="brand-options">
       <span
-       className="option"
-       onClick={() => handleBrandsFilter("All")}>
+        ref={firstOption}
+       className="option selected"
+       onClick={handleClick}>
        All Brands
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("Retail")}>
+       onClick={handleClick}>
        Retail
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("Franchise")}>
+       onClick={handleClick}>
        Franchise
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("Wholesale")}>
+       onClick={handleClick}>
        Wholesale
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("International")}>
+       onClick={handleClick}>
        International
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("Fleet")}>
+       onClick={handleClick}>
        Fleet
       </span>
 
       <span
        className="option"
-       onClick={() => handleBrandsFilter("Software")}>
+       onClick={handleClick}>
        Software
       </span>
     </div>
