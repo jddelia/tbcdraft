@@ -6,7 +6,7 @@ const BrandsOptions = ({ handleBrandsFilter }) => {
 
   useEffect(() => {
     if (!selectedHistory[0]) {
-      (async () => await setSelectedHistory([firstOption.current]))();
+      (() => setSelectedHistory([firstOption.current]))();
     }
   }, [firstOption])
 
