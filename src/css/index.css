@@ -65,6 +65,8 @@ code {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
   background: #1d71ee;
   height: 144px;
   border: 1px solid #3d66ee;
