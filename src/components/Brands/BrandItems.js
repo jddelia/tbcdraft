@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTransition, animated } from 'react-spring';
 
 import BrandCard from './BrandCard';
 
@@ -13,14 +14,25 @@ const BrandItems = ({ brandsFilter }) => {
     })
   );
 
-  const brandsList = filteredBrandsList.map(brand => {
+  const transitions = useTransition(filteredBrandsList, brand => brand.id, {
+    from: { opacity: 0, transform: 'translate(40px, 0px)' },
+    enter: { opacity: 1, transform: 'translate(0, 0px)' },
+    leave: { opacity: 0, transform: 'translate(-40px, 0px)' },
+  });
+
+  console.log(transitions)
+
+  const brandsList = transitions.map(({item, props, key}) => {
+    console.log(item);
+    
     return (
-      <BrandCard
-        key={brand.id}
-        mainImage={brand.mainImage}
-        logo={brand.logo}
-        content={brand.content} />
-    )
+      <animated.div key={key} style={props}>
+        <BrandCard
+        mainImage={item.mainImage}
+        logo={item.logo}
+        content={item.content} />
+      </animated.div>
+    );
   });
 
   return (
