@@ -17,7 +17,7 @@ const BrandItems = ({ brandsFilter }) => {
   const transitions = useTransition(filteredBrandsList, brand => brand.id, {
     from: { opacity: 0, transform: 'translate(40px, 0px)' },
     enter: { opacity: 1, transform: 'translate(0, 0px)' },
-    leave: { opacity: 0, transform: 'translate(-40px, 0px)' },
+    leave: { display: "none" },
   });
 
   console.log(transitions)
