@@ -29,6 +29,7 @@ const Navbar = () => {
           <a href="#">Wholesale <br /> Brands</a>
           <a href="#">Fleet <br /> Services</a>
           <a href="#">Real <br /> Estate</a>
+          <a href="#"><i className="fas fa-bars fa-2x hamburger"></i></a>
         </div>
       </div>
     </nav>

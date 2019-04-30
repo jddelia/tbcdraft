@@ -69,8 +69,9 @@ code {
     .nav-left {
       width: 80%;
       justify-self: center;
+
       .nav-logo {
-        width: 150px;
+        width: 12vw;
       }
     }
 
@@ -88,11 +89,17 @@ code {
         text-align: center;
         transition: color .2s;
 
+        &:nth-of-type(n+1):nth-last-of-type(n+3) {
+          border-right: 1px solid #649fe2;
+        }
+
         &:hover {
           color: #e6c32a;
         }
+      }
 
-        @include linkRightBorder;
+      .hamburger {
+        display: none;
       }
     }
   }
@@ -424,7 +431,7 @@ code {
     position: sticky;
     top: 0;
     background: #1d71ee;
-    height: 144px;
+    height: 80px;
     border: 1px solid #3d66ee;
     display: grid;
     grid-template-columns: 1fr;
@@ -432,48 +439,20 @@ code {
     z-index: 1;
   
     .nav-top {
-      background: #175abd;
-      width: 100%;
-      height: 34px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      justify-items: center;
-      
-      .nav-top-links {
-        grid-column: 2;
-        width: 100%;
-        margin-right: 20%;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-  
-        a {
-          color: #ffffff;
-          text-decoration: none;
-          margin: 0 2%;
-          font-size: 14px;
-          text-align: center;
-          transition: color .2s;
-  
-          &:hover {
-            color: #e6c32a;
-          }
-  
-          @include linkRightBorder;
-        }
-      }
+      display: none;
     }
   
     .nav-bottom {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 9fr;
       align-items: center;
   
       .nav-left {
         width: 80%;
         justify-self: center;
+
         .nav-logo {
-          width: 150px;
+          width: 18vw;
         }
       }
   
@@ -481,12 +460,21 @@ code {
         width: 90%;
         justify-self: center;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+
+        a:nth-of-type(5), a:nth-of-type(6) {
+          display: none;
+        }
   
         a {
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 2%;
           text-decoration: none;
           color: #ffffff;
-          font-size: 16px;
+          font-size: 14px;
           line-height: 1.3;
           text-align: center;
           transition: color .2s;
@@ -494,8 +482,19 @@ code {
           &:hover {
             color: #e6c32a;
           }
+
+          &:first-of-type {
+            border-left: 1px solid #175abd;
+          }
   
-          @include linkRightBorder;
+          &:nth-of-type(n+1):nth-last-of-type(n+2) {
+            border-right: 1px solid #175abd;
+            margin: 0 2%;
+          }
+        }
+
+        .hamburger {
+          display: flex;
         }
       }
     }
