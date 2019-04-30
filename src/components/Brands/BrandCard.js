@@ -14,6 +14,8 @@ const BrandCard = ({ mainImage, logo, content }) => {
         alt="brnad logo" />
 
       <span className="brand-card-content">{content}</span>
+
+      <button className="brand-card-button">Learn More</button>
     </div>
   );
 };
